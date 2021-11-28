@@ -1,14 +1,13 @@
 /* 
-    Library
-    
-    Fetch the collection of books 
-        from books.json, assign each 
-        a unique id
-        
-    Create a div to represent a book
-        using Grid & grid-template-areas 
-        build a book component
-        display all books using Flexbox
+    Library (Challenge)
+
+    Write a displayLibrary(books) function
+        - Add error catching
+
+    Use CSS Grid instead of Flexbox to style 
+        the library container
+        - Use a gap of 1rem
+        - Display 3 books per row
 */
 
 async function getBooks() {
@@ -30,11 +29,12 @@ function getBookHtml(book) {
     </div>`
 }
 
-getBooks().then(books => {
-    let sampleBook = books[0]
-    console.log(sampleBook)
-    
+function displayLibrary(books) {
     document.body.innerHTML = `<div class="my-library">
         ${books.map(getBookHtml).join('')}
     </div>`
-})
+}
+
+getBooks()
+    .then(displayLibrary)
+    .catch(e => console.log(e))
