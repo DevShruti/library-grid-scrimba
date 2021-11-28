@@ -23,5 +23,12 @@ async function getBooks() {
 }
 
 getBooks().then(books => {
-    console.log(books)
+    let sampleBook = books[0]
+    console.log(sampleBook)
+    
+    document.body.innerHTML = `<div class="my-book">
+        <div class="my-book-cover">${sampleBook.title}</div>
+        <div class="my-book-spine">Spine</div>
+        <div class="my-book-footer">Footer</div>
+    </div>`
 })
