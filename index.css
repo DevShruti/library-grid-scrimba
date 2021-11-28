@@ -45,3 +45,11 @@ body {
   background-color: lightgray;
   border-bottom-left-radius: 0.3rem;
 }
+
+.my-book:nth-of-type(even) .my-book-cover {
+  background-color: lightblue;
+}
+
+.my-book:nth-of-type(even) .my-book-spine {
+  background-color: #e1b07e;
+}
