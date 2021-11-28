@@ -10,3 +10,12 @@
         build a book component
         display all books using Flexbox
 */
+
+async function getBooks() {
+    let response = await fetch('books.json')
+    return await response.json()
+}
+
+getBooks().then(books => {
+    console.log(books)
+})
